@@ -1,0 +1,34 @@
+public class TrainString {
+    public static String repeat(String str,int n){
+        String ans="";
+        for(int i=0;i<n;i++){
+            ans+=str;
+        }
+        return ans;
+    }
+    public static String trainprint(String s){
+        int start=(s.length()/2)+1;
+        String ans="";
+        for (int i=0;i<s.length();i++){
+            if(i<s.length()/2){
+                String temp=""+s.charAt(i);
+                ans+=repeat(temp,start);
+                start--;
+            }
+            else if(i==s.length()/2) {ans+=s.charAt(i);continue;}
+            else {
+                start++;
+                String temp=""+s.charAt(i);
+                ans+=repeat(temp,start);
+
+            }
+        }
+        return ans;
+    }
+    public static void main(String[] args) {
+        String s="sabaris";
+        System.out.println("Train Print : "+trainprint(s));
+
+
+    }
+}

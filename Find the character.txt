@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class FindTheCharacter {
+    public static boolean isAvailable(String s,char ch){
+        if(s.length()==0) {
+            return false;}
+        char c= s.charAt(0);
+        if(ch==c) {
+            System.out.println(ch);
+            return true;
+        }
+            return isAvailable(s.substring(1),ch);
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the String : ");
+        String s=sc.nextLine();
+        System.out.println("Enter the Character : ");
+        char c=sc.next().charAt(0);
+        System.out.println( isAvailable(s,c));
+    }
+}
